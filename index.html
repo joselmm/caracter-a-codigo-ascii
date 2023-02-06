@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver codigo ascii de un caracter</title>
+    <style>
+        /*      #container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        } */
+        #result {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div>
+            <h3>Caracter a codigo ascii</h3>
+        </div>
+        <br>
+        <p>Por favor abre el mapa de caracteres <br> y copia el caracter del cual quieres saber su codigo ascii <br>y
+            pegalo aqui</p>
+        <input type="text" id="caracter" maxlength="1">
+        <div id="result"></div>
+    </div>
+    <script id="main">
+        const $caracter = document.getElementById("caracter");
+        const $result = document.getElementById("result");
+
+        $caracter.addEventListener("input", getAscii)
+
+        function getAscii() {
+            if ($caracter.value===""){
+                $result.innerText="introduce un caracter";
+                return
+            }
+            var caracter = $caracter.value;
+            $result.innerText = "Código ascii: Alt + " + caracter.charCodeAt(0)
+
+        }
+
+    </script>
+</body>
+
+</html>
